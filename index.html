@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enhanced Basketball Game</title>
-    <script src="game.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to the Enhanced Basketball Game!</h1>
-    <div id="scoreboard">
-        <h2>Score: <span id="score">0</span></h2>
+    <h1>Enhanced Basketball Game</h1>
+    <div id="game-container">
+        <!-- Game canvas for rendering -->
+        <canvas id="gameCanvas"></canvas>
+        <div id="controls">
+            <button id="shootBtn">Shoot</button>
+            <button id="passBtn">Pass</button>
+            <button id="dribbleBtn">Dribble</button>
+        </div>
     </div>
-    <button id="shootBtn">Shoot Ball</button>
-    <div id="gameArea"></div>
-    <script>
-        let score = 0;
-        let gameArea = document.getElementById('gameArea');
-        const shootBtn = document.getElementById('shootBtn');
-        const scoreDisplay = document.getElementById('score');
-
-        shootBtn.addEventListener('click', function() {
-            // Simulate shooting ball with physics
-            // Scoring mechanics
-            score += 2;  // Example scoring system
-            scoreDisplay.textContent = score;
-        });
-    </script>
+    <div id="leaderboard">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboardList">
+            <!-- Dynamic leaderboard will be populated here -->
+        </ol>
+    </div>
+    <div id="gameModes">
+        <h2>Game Modes</h2>
+        <button id="singlePlayer">Single Player</button>
+        <button id="multiplayer">Multiplayer</button>
+        <button id="timedChallenge">Timed Challenge</button>
+    </div>
+    <script src="game.js"></script>
 </body>
 </html>
